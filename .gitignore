@@ -1,0 +1,29 @@
+# .NET
+bin/
+obj/
+*.csproj.user
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+Ecommerce.API/appsettings.Development.json
+Ecommerce.API/Properties/launchSettings.json
+
+# Node / Next.js (quand tu l'auras)
+node_modules/
+.next/
+out/
+.env
+.env.local
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# macOS
+.DS_Store
+
+# Logs
+*.log

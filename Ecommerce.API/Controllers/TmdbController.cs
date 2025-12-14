@@ -20,7 +20,37 @@ namespace Ecommerce.API.Controllers
             var data = await _tmdb.GetPopularMoviesAsync();
             return Ok(data);
         }
+        
 
+        [HttpGet("genres/movies")]
+        public async Task<IActionResult> GetMovieGenres()
+        {
+            var data = await _tmdb.GetMovieGenresAsync();
+            return Ok(data);
+        }
+
+        [HttpGet("genres/tv")]
+        public async Task<IActionResult> GetTvGenres()
+        {
+            var data = await _tmdb.GetTvGenresAsync();
+            return Ok(data);
+        }
+
+        // 🔍 Films par genre
+        [HttpGet("movies/by-genre/{genreId}")]
+        public async Task<IActionResult> GetMoviesByGenre(int genreId, [FromQuery] int page = 1)
+        {
+            var data = await _tmdb.GetMoviesByGenreAsync(genreId, page);
+            return Ok(data);
+        }
+
+        // 🔍 Séries par genre
+        [HttpGet("tv/by-genre/{genreId}")]
+        public async Task<IActionResult> GetTvByGenre(int genreId, [FromQuery] int page = 1)
+        {
+            var data = await _tmdb.GetTvByGenreAsync(genreId, page);
+            return Ok(data);
+        }
         [HttpGet("search")]
         public async Task<IActionResult> Search([FromQuery] string query)
         {
@@ -33,6 +63,13 @@ namespace Ecommerce.API.Controllers
         {
             var data = await _tmdb.GetMovieDetailsAsync(id);
             return Ok(data);
+        }
+
+        [HttpGet("tv/popular")]
+        public async Task<IActionResult> GetPopularTv([FromQuery] int page = 1)
+        {
+            var result = await _tmdb.GetTvDetailsAsync(page);
+            return Ok(result);
         }
     }
 }

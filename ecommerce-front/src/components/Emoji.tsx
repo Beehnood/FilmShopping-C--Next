@@ -1,4 +1,5 @@
-// Créer un fichier emojis.tsx
+// Pour créer des emojis
+// Appuyez sur ⌃ + ⌘ + Espace (Control + Command + Espace)
  export const EMOJIS = {
   STAR: "⭐",
   CALENDAR: "📅",
@@ -7,7 +8,8 @@
   GLOBE: "🌐",
   EYE: "👁️",
   HEART: "❤️",
-  THUMBS_UP: "👍"
+  THUMBS_UP: "👍",
+  TV:"📺"
 } as const;
 
 
